@@ -1,0 +1,10 @@
+# Project Bedrock Local Exclusions
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+*.pem
+kubeconfig
+.kubectl/

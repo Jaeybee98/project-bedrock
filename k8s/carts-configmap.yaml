@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  AWS_REGION: "us-east-1"
+  RETAIL_CART_PERSISTENCE_DYNAMODB_CREATE_TABLE: "false"
+  RETAIL_CART_PERSISTENCE_DYNAMODB_ENDPOINT: ""
+  RETAIL_CART_PERSISTENCE_DYNAMODB_TABLE_NAME: "project-bedrock-carts"
+kind: ConfigMap
+metadata:
+  name: carts
+  namespace: retail-app

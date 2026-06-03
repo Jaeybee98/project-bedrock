@@ -1,0 +1,52 @@
+{
+  "assets_bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "bedrock-assets-jaeybee98"
+  },
+  "cluster_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://94A91E98EDE69D3904DF2BEA77626B20.gr7.us-east-1.eks.amazonaws.com"
+  },
+  "cluster_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "project-bedrock-cluster"
+  },
+  "dev_iam_user_access_key_id": {
+    "sensitive": false,
+    "type": "string",
+    "aws_access_key_id": "REMOVED_FOR_SECURITY"
+  },
+  "dev_iam_user_console_login": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://signin.aws.amazon.com/console"
+  },
+  "dev_iam_user_password": {
+    "sensitive": true,
+    "type": "string",
+    "value": "Uhu'7=ry-QKaTvv)"
+  },
+  "dev_iam_user_secret_access_key": {
+    "sensitive": true,
+    "type": "string",
+    "aws_secret_access_key": "REMOVED_FOR_SECURITY"
+  },
+  "dev_iam_user_username": {
+    "sensitive": false,
+    "type": "string",
+    "value": "bedrock-dev-view"
+  },
+  "region": {
+    "sensitive": false,
+    "type": "string",
+    "value": "us-east-1"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-03044dba47846e496"
+  }
+}
