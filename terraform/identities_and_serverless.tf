@@ -61,7 +61,7 @@ resource "aws_eks_access_entry" "dev_cluster_entry" {
 # Bind the native read-only view ClusterRole to this specific user namespace scope
 resource "aws_eks_access_policy_association" "dev_view_policy" {
   cluster_name  = module.compute.cluster_name
-  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy"
+  policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy"
   principal_arn = aws_iam_user.dev_user.arn
   
   access_scope {
