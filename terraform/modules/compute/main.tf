@@ -115,29 +115,6 @@ resource "aws_iam_openid_connect_provider" "oidc" {
   url             = aws_eks_cluster.bedrock_cluster.identity[0].oidc[0].issuer
 }
 
-# Add this block to terraform/modules/compute/main.tf
-resource "aws_iam_role_policy" "eks_node_observability" {
-  name = "eks-node-observability-policy"
-  role = aws_iam_role.node_role.id # Ensure this matches your existing role resource name
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "xray:PutTraceSegments",
-          "xray:PutTelemetryRecords",
-          "logs:PutLogEvents",
-          "logs:CreateLogStream",
-          "logs:CreateLogGroup"
-        ]
-        Effect   = "Allow"
-        Resource = "*"
-      }
-    ]
-  })
-}
-
 # --- MODULE VARIABLES ---
 variable "private_subnet_ids" { type = list(string) }
 
