@@ -22,3 +22,8 @@ output "assets_bucket_name" {
   value       = "bedrock-assets-${var.student_id}"
   description = "Target Marketing Asset Bucket Name."
 }
+
+output "assets_bucket_name" {
+  description = "The name of the secure assets S3 bucket"
+  value       = aws_s3_bucket.assets.id
+}

@@ -1,0 +1,2786 @@
+{
+  "version": 4,
+  "terraform_version": "1.7.0",
+  "serial": 32,
+  "lineage": "5ea7cd66-c2fb-dfac-7ef8-c2fd1f30a81d",
+  "outputs": {
+    "assets_bucket_name": {
+      "value": "bedrock-assets-jaeybee98",
+      "type": "string"
+    },
+    "cluster_endpoint": {
+      "value": "https://94A91E98EDE69D3904DF2BEA77626B20.gr7.us-east-1.eks.amazonaws.com",
+      "type": "string"
+    },
+    "cluster_name": {
+      "value": "project-bedrock-cluster",
+      "type": "string"
+    },
+    "dev_iam_user_access_key_id": {
+      "value": "AKIA56P7M524ZCKBXCD6",
+      "type": "string"
+    },
+    "dev_iam_user_console_login": {
+      "value": "https://signin.aws.amazon.com/console",
+      "type": "string"
+    },
+    "dev_iam_user_password": {
+      "value": "Uhu'7=ry-QKaTvv)",
+      "type": "string",
+      "sensitive": true
+    },
+    "dev_iam_user_secret_access_key": {
+      "value": "5jOC9m/mLTg4xsA/xIumKmIN/YgKhF1fCeaXYZdN",
+      "type": "string",
+      "sensitive": true
+    },
+    "dev_iam_user_username": {
+      "value": "bedrock-dev-view",
+      "type": "string"
+    },
+    "region": {
+      "value": "us-east-1",
+      "type": "string"
+    },
+    "vpc_id": {
+      "value": "vpc-03044dba47846e496",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "lambda_zip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "exclude_symlink_directories": null,
+            "excludes": null,
+            "id": "17b74098b9d1b15cac7150490f1e4ce585e535a4",
+            "output_base64sha256": "LIidSgQ7wxFFaZxwTuCbbq3dY2+mkSfbzhhHGlosXeE=",
+            "output_base64sha512": "GFpHSmPgclwkByeRQm6Q3o3CI0Z/F2q80fVI5IRfmhRLX+aQayfTJglwzG6ZtzDeTQZ9678ag4VfArJQWZ9Pfw==",
+            "output_file_mode": null,
+            "output_md5": "937a258df5672460310f0c9cf4fd0326",
+            "output_path": "./../lambda/asset_processor.zip",
+            "output_sha": "17b74098b9d1b15cac7150490f1e4ce585e535a4",
+            "output_sha256": "2c889d4a043bc31145699c704ee09b6eaddd636fa69127dbce18471a5a2c5de1",
+            "output_sha512": "185a474a63e0725c24072791426e90de8dc223467f176abcd1f548e4845f9a144b5fe6906b27d3260970cc6e99b730de4d067debbf1a83855f02b250599f4f7f",
+            "output_size": 624,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": null,
+            "source_file": "./../lambda/asset_processor.py",
+            "type": "zip"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "aws_eks_cluster_auth",
+      "name": "cluster",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-cluster",
+            "name": "project-bedrock-cluster",
+            "token": "k8s-aws-v1.aHR0cHM6Ly9zdHMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vP0FjdGlvbj1HZXRDYWxsZXJJZGVudGl0eSZWZXJzaW9uPTIwMTEtMDYtMTUmWC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBNTZQN001MjRVVlpTUzVCNSUyRjIwMjYwNjA0JTJGdXMtZWFzdC0xJTJGc3RzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA2MDRUMDAwNTQ5WiZYLUFtei1FeHBpcmVzPTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JTNCeC1rOHMtYXdzLWlkJlgtQW16LVNpZ25hdHVyZT0yMWY4OGMwZGJhYTJiZTAwMWRhNjgyZDM3ZjBmOWZmNDk1NDc5ZTc3OWMxYzE0ODMyNmNkYzcyYzVjMDg2NGNi"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eks_access_entry",
+      "name": "dev_cluster_entry",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_entry_arn": "arn:aws:eks:us-east-1:958850199225:access-entry/project-bedrock-cluster/user/958850199225/bedrock-dev-view/c0cf46ce-3d22-907a-60f9-0565bc23673f",
+            "cluster_name": "project-bedrock-cluster",
+            "created_at": "2026-06-03T13:11:43Z",
+            "id": "project-bedrock-cluster:arn:aws:iam::958850199225:user/bedrock-dev-view",
+            "kubernetes_groups": [],
+            "modified_at": "2026-06-03T13:11:43Z",
+            "principal_arn": "arn:aws:iam::958850199225:user/bedrock-dev-view",
+            "tags": {},
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "type": "STANDARD",
+            "user_name": "bedrock-dev-view"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_iam_user.dev_user",
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eks_access_entry",
+      "name": "root_cluster_entry",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_entry_arn": "arn:aws:eks:us-east-1:958850199225:access-entry/project-bedrock-cluster/root/958850199225//4ccf471d-3b6e-74c9-784b-860c2711b76d",
+            "cluster_name": "project-bedrock-cluster",
+            "created_at": "2026-06-03T16:04:17Z",
+            "id": "project-bedrock-cluster:arn:aws:iam::958850199225:root",
+            "kubernetes_groups": [],
+            "modified_at": "2026-06-03T16:04:17Z",
+            "principal_arn": "arn:aws:iam::958850199225:root",
+            "tags": {},
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "type": "STANDARD",
+            "user_name": "arn:aws:iam::958850199225:root"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eks_access_policy_association",
+      "name": "dev_view_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_scope": [
+              {
+                "namespaces": [
+                  "kube-system",
+                  "retail-app"
+                ],
+                "type": "namespace"
+              }
+            ],
+            "associated_at": "2026-06-04 00:05:54.651 +0000 UTC",
+            "cluster_name": "project-bedrock-cluster",
+            "id": "project-bedrock-cluster#arn:aws:iam::958850199225:user/bedrock-dev-view#arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy",
+            "modified_at": "2026-06-04 00:05:54.651 +0000 UTC",
+            "policy_arn": "arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy",
+            "principal_arn": "arn:aws:iam::958850199225:user/bedrock-dev-view",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_iam_user.dev_user",
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eks_access_policy_association",
+      "name": "root_admin_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_scope": [
+              {
+                "namespaces": [],
+                "type": "cluster"
+              }
+            ],
+            "associated_at": "2026-06-03 16:04:19.607 +0000 UTC",
+            "cluster_name": "project-bedrock-cluster",
+            "id": "project-bedrock-cluster#arn:aws:iam::958850199225:root#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy",
+            "modified_at": "2026-06-03 16:04:19.607 +0000 UTC",
+            "policy_arn": "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy",
+            "principal_arn": "arn:aws:iam::958850199225:root",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_eks_access_entry.root_cluster_entry",
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_access_key",
+      "name": "dev_keys",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_date": "2026-06-03T13:01:19Z",
+            "encrypted_secret": null,
+            "encrypted_ses_smtp_password_v4": null,
+            "id": "AKIA56P7M524ZCKBXCD6",
+            "key_fingerprint": null,
+            "pgp_key": null,
+            "secret": "5jOC9m/mLTg4xsA/xIumKmIN/YgKhF1fCeaXYZdN",
+            "ses_smtp_password_v4": "BClG5jIPhrDL3IiYe/P678OP70PjaGTj5R1xOhauNYBE",
+            "status": "Active",
+            "user": "bedrock-dev-view"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_user.dev_user"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "lambda_execution_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:role/project-bedrock-lambda-execution-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T13:01:18Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "project-bedrock-lambda-execution-role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+            ],
+            "max_session_duration": 3600,
+            "name": "project-bedrock-lambda-execution-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "unique_id": "AROA56P7M5244VFAUOKZK"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "lambda_basic_execution",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-lambda-execution-role-20260603130121433700000004",
+            "policy_arn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+            "role": "project-bedrock-lambda-execution-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.lambda_execution_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "dev_user",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:user/bedrock-dev-view",
+            "force_destroy": true,
+            "id": "bedrock-dev-view",
+            "name": "bedrock-dev-view",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "unique_id": "AIDA56P7M5245SR2OIH46"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_user_login_profile",
+      "name": "dev_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "encrypted_password": null,
+            "id": "bedrock-dev-view",
+            "key_fingerprint": null,
+            "password": "Uhu'7=ry-QKaTvv)",
+            "password_length": 16,
+            "password_reset_required": false,
+            "pgp_key": null,
+            "user": "bedrock-dev-view"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_user.dev_user"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_user_policy",
+      "name": "dev_s3_upload_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "bedrock-dev-view:bedrock-dev-s3-upload-access",
+            "name": "bedrock-dev-s3-upload-access",
+            "name_prefix": "",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::bedrock-assets-jaeybee98/*\"}]}",
+            "user": "bedrock-dev-view"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_user.dev_user",
+            "module.storage.aws_s3_bucket.assets"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_user_policy_attachment",
+      "name": "console_read_only",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "bedrock-dev-view-20260603130120993600000003",
+            "policy_arn": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+            "user": "bedrock-dev-view"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_user.dev_user"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "asset_processor",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:958850199225:function:bedrock-asset-processor",
+            "code_sha256": "LIidSgQ7wxFFaZxwTuCbbq3dY2+mkSfbzhhHGlosXeE=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "environment": [],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": "./../lambda/asset_processor.zip",
+            "function_name": "bedrock-asset-processor",
+            "handler": "asset_processor.lambda_handler",
+            "id": "bedrock-asset-processor",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:958850199225:function:bedrock-asset-processor/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2026-06-03T13:01:30.670+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/bedrock-asset-processor",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 128,
+            "package_type": "Zip",
+            "publish": false,
+            "qualified_arn": "arn:aws:lambda:us-east-1:958850199225:function:bedrock-asset-processor:$LATEST",
+            "qualified_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:958850199225:function:bedrock-asset-processor:$LATEST/invocations",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "role": "arn:aws:iam::958850199225:role/project-bedrock-lambda-execution-role",
+            "runtime": "python3.11",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "LIidSgQ7wxFFaZxwTuCbbq3dY2+mkSfbzhhHGlosXeE=",
+            "source_code_size": 624,
+            "tags": {
+              "Name": "bedrock-asset-processor",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "bedrock-asset-processor",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeout": 15,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "$LATEST",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_iam_role.lambda_execution_role",
+            "data.archive_file.lambda_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_permission",
+      "name": "allow_s3_invocation",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "lambda:InvokeFunction",
+            "event_source_token": null,
+            "function_name": "bedrock-asset-processor",
+            "function_url_auth_type": null,
+            "id": "AllowExecutionFromS3Bucket",
+            "principal": "s3.amazonaws.com",
+            "principal_org_id": null,
+            "qualifier": "",
+            "source_account": null,
+            "source_arn": "arn:aws:s3:::bedrock-assets-jaeybee98",
+            "statement_id": "AllowExecutionFromS3Bucket",
+            "statement_id_prefix": ""
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.lambda_execution_role",
+            "aws_lambda_function.asset_processor",
+            "data.archive_file.lambda_zip",
+            "module.storage.aws_s3_bucket.assets"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_notification",
+      "name": "bucket_notification",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "bedrock-assets-jaeybee98",
+            "eventbridge": false,
+            "id": "bedrock-assets-jaeybee98",
+            "lambda_function": [
+              {
+                "events": [
+                  "s3:ObjectCreated:*"
+                ],
+                "filter_prefix": "",
+                "filter_suffix": "",
+                "id": "tf-s3-lambda-20260603130140131700000009",
+                "lambda_function_arn": "arn:aws:lambda:us-east-1:958850199225:function:bedrock-asset-processor"
+              }
+            ],
+            "queue": [],
+            "topic": []
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.lambda_execution_role",
+            "aws_lambda_function.asset_processor",
+            "aws_lambda_permission.allow_s3_invocation",
+            "data.archive_file.lambda_zip",
+            "module.storage.aws_s3_bucket.assets"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "helm_release",
+      "name": "aws_lb_controller",
+      "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "atomic": false,
+            "chart": "aws-load-balancer-controller",
+            "cleanup_on_fail": false,
+            "create_namespace": false,
+            "dependency_update": false,
+            "description": null,
+            "devel": null,
+            "disable_crd_hooks": false,
+            "disable_openapi_validation": false,
+            "disable_webhooks": false,
+            "force_update": false,
+            "id": "aws-load-balancer-controller",
+            "keyring": null,
+            "lint": false,
+            "manifest": null,
+            "max_history": 0,
+            "metadata": [
+              {
+                "app_version": "v2.7.2",
+                "chart": "aws-load-balancer-controller",
+                "first_deployed": 1780515660,
+                "last_deployed": 1780519376,
+                "name": "aws-load-balancer-controller",
+                "namespace": "kube-system",
+                "notes": "AWS Load Balancer controller installed!\n",
+                "revision": 2,
+                "values": "{\"clusterName\":\"project-bedrock-cluster\",\"region\":\"us-east-1\",\"serviceAccount\":{\"annotations\":{\"eks.amazonaws.com/role-arn\":\"arn:aws:iam::958850199225:role/project-bedrock-alb-controller-role\"},\"create\":true,\"name\":\"aws-load-balancer-controller\"},\"vpcId\":\"vpc-03044dba47846e496\"}",
+                "version": "1.7.2"
+              }
+            ],
+            "name": "aws-load-balancer-controller",
+            "namespace": "kube-system",
+            "pass_credentials": false,
+            "postrender": [],
+            "recreate_pods": false,
+            "render_subchart_notes": true,
+            "replace": false,
+            "repository": "https://aws.github.io/eks-charts",
+            "repository_ca_file": null,
+            "repository_cert_file": null,
+            "repository_key_file": null,
+            "repository_password": null,
+            "repository_username": null,
+            "reset_values": false,
+            "reuse_values": false,
+            "set": [
+              {
+                "name": "clusterName",
+                "type": "",
+                "value": "project-bedrock-cluster"
+              },
+              {
+                "name": "region",
+                "type": "",
+                "value": "us-east-1"
+              },
+              {
+                "name": "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn",
+                "type": "",
+                "value": "arn:aws:iam::958850199225:role/project-bedrock-alb-controller-role"
+              },
+              {
+                "name": "serviceAccount.create",
+                "type": "",
+                "value": "true"
+              },
+              {
+                "name": "serviceAccount.name",
+                "type": "",
+                "value": "aws-load-balancer-controller"
+              },
+              {
+                "name": "vpcId",
+                "type": "",
+                "value": "vpc-03044dba47846e496"
+              }
+            ],
+            "set_list": [],
+            "set_sensitive": [],
+            "skip_crds": false,
+            "status": "deployed",
+            "timeout": 300,
+            "upgrade_install": null,
+            "values": null,
+            "verify": false,
+            "version": "1.7.2",
+            "wait": true,
+            "wait_for_jobs": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_eks_node_group.bedrock_nodes",
+            "module.compute.aws_iam_openid_connect_provider.oidc",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role.eks_node_role",
+            "module.compute.aws_iam_role_policy_attachment.ec2_registry_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_cni_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_worker_node_policy",
+            "module.compute.data.tls_certificate.cluster",
+            "module.monitoring.aws_iam_role.alb_controller_role",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_password",
+      "name": "dev_console_password",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 3,
+          "attributes": {
+            "bcrypt_hash": "$2a$10$t7qD6wjWrxZ7MHf9bpCry.iHWHoPERv3p1xhgzjj5KYWGci3suDd6",
+            "id": "none",
+            "keepers": null,
+            "length": 16,
+            "lower": true,
+            "min_lower": 0,
+            "min_numeric": 0,
+            "min_special": 0,
+            "min_upper": 0,
+            "number": true,
+            "numeric": true,
+            "override_special": null,
+            "result": "qP(O-CCBO!0\u003eIuB3",
+            "special": true,
+            "upper": true
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "data",
+      "type": "tls_certificate",
+      "name": "cluster",
+      "provider": "provider[\"registry.terraform.io/hashicorp/tls\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "certificates": [
+              {
+                "cert_pem": "-----BEGIN CERTIFICATE-----\nMIIEkjCCA3qgAwIBAgITBn+USionzfP6wq4rAfkI7rnExjANBgkqhkiG9w0BAQsF\nADCBmDELMAkGA1UEBhMCVVMxEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNj\nb3R0c2RhbGUxJTAjBgNVBAoTHFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4x\nOzA5BgNVBAMTMlN0YXJmaWVsZCBTZXJ2aWNlcyBSb290IENlcnRpZmljYXRlIEF1\ndGhvcml0eSAtIEcyMB4XDTE1MDUyNTEyMDAwMFoXDTM3MTIzMTAxMDAwMFowOTEL\nMAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv\nb3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj\nca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM\n9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw\nIFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6\nVOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L\n93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm\njgSubJrIqg0CAwEAAaOCATEwggEtMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/\nBAQDAgGGMB0GA1UdDgQWBBSEGMyFNOy8DJSULghZnMeyEE4KCDAfBgNVHSMEGDAW\ngBScXwDfqgHXMCs4iKK4bUqc8hGRgzB4BggrBgEFBQcBAQRsMGowLgYIKwYBBQUH\nMAGGImh0dHA6Ly9vY3NwLnJvb3RnMi5hbWF6b250cnVzdC5jb20wOAYIKwYBBQUH\nMAKGLGh0dHA6Ly9jcnQucm9vdGcyLmFtYXpvbnRydXN0LmNvbS9yb290ZzIuY2Vy\nMD0GA1UdHwQ2MDQwMqAwoC6GLGh0dHA6Ly9jcmwucm9vdGcyLmFtYXpvbnRydXN0\nLmNvbS9yb290ZzIuY3JsMBEGA1UdIAQKMAgwBgYEVR0gADANBgkqhkiG9w0BAQsF\nAAOCAQEAYjdCXLwQtT6LLOkMm2xF4gcAevnFWAu5CIw+7bMlPLVvUOTNNWqnkzSW\nMiGpSESrnO09tKpzbeR/FoCJbM8oAxiDR3mjEH4wW6w7sGDgd9QIpuEdfF7Au/ma\neyKdpwAJfqxGF4PcnCZXmTA5YpaP7dreqsXMGz7KQ2hsVxa81Q4gLv7/wmpdLqBK\nbRRYh5TmOTFffHPLkIhqhBGWJ6bt2YFGpn6jcgAKUj6DiAdjd4lpFw85hdKrCEVN\n0FE6/V1dN2RMfjCyVSRCnTawXZwXgWHxyvkQAiSr6w10kY17RSlQOYiypok1JR4U\nakcjMS9cmvqtmg5iUaQqqcT5NJ0hGA==\n-----END CERTIFICATE-----\n",
+                "is_ca": true,
+                "issuer": "CN=Starfield Services Root Certificate Authority - G2,O=Starfield Technologies\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                "max_path_length": -1,
+                "not_after": "2037-12-31T01:00:00Z",
+                "not_before": "2015-05-25T12:00:00Z",
+                "public_key_algorithm": "RSA",
+                "serial_number": "144918191876577076464031512351042010504348870",
+                "sha1_fingerprint": "06b25927c42a721631c1efd9431e648fa62e1e39",
+                "signature_algorithm": "SHA256-RSA",
+                "subject": "CN=Amazon Root CA 1,O=Amazon,C=US",
+                "version": 3
+              },
+              {
+                "cert_pem": "-----BEGIN CERTIFICATE-----\nMIIEXjCCA0agAwIBAgITB3MSOAudZoijOx7Zv5zNpo4ODzANBgkqhkiG9w0BAQsF\nADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6\nb24gUm9vdCBDQSAxMB4XDTIyMDgyMzIyMjEyOFoXDTMwMDgyMzIyMjEyOFowPDEL\nMAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEcMBoGA1UEAxMTQW1hem9uIFJT\nQSAyMDQ4IE0wMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOtxLKnL\nH4gokjIwr4pXD3i3NyWVVYesZ1yX0yLI2qIUZ2t88Gfa4gMqs1YSXca1R/lnCKeT\nepWSGA+0+fkQNpp/L4C2T7oTTsddUx7g3ZYzByDTlrwS5HRQQqEFE3O1T5tEJP4t\nf+28IoXsNiEzl3UGzicYgtzj2cWCB41eJgEmJmcf2T8TzzK6a614ZPyq/w4CPAff\nnAV4coz96nW3AyiE2uhuB4zQUIXvgVSycW7sbWLvj5TDXunEpNCRwC4kkZjK7rol\njtT2cbb7W2s4Bkg3R42G3PLqBvt2N32e/0JOTViCk8/iccJ4sXqrS1uUN4iB5Nmv\nJK74csVl+0u0UecCAwEAAaOCAVowggFWMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYD\nVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAdBgNV\nHQ4EFgQUgbgOY4qJEhjl+js7UJWf5uWQE4UwHwYDVR0jBBgwFoAUhBjMhTTsvAyU\nlC4IWZzHshBOCggwewYIKwYBBQUHAQEEbzBtMC8GCCsGAQUFBzABhiNodHRwOi8v\nb2NzcC5yb290Y2ExLmFtYXpvbnRydXN0LmNvbTA6BggrBgEFBQcwAoYuaHR0cDov\nL2NydC5yb290Y2ExLmFtYXpvbnRydXN0LmNvbS9yb290Y2ExLmNlcjA/BgNVHR8E\nODA2MDSgMqAwhi5odHRwOi8vY3JsLnJvb3RjYTEuYW1hem9udHJ1c3QuY29tL3Jv\nb3RjYTEuY3JsMBMGA1UdIAQMMAowCAYGZ4EMAQIBMA0GCSqGSIb3DQEBCwUAA4IB\nAQCtAN4CBSMuBjJitGuxlBbkEUDeK/pZwTXv4KqPK0G50fOHOQAd8j21p0cMBgbG\nkfMHVwLU7b0XwZCav0h1ogdPMN1KakK1DT0VwA/+hFvGPJnMV1Kx2G4S1ZaSk0uU\n5QfoiYIIano01J5k4T2HapKQmmOhS/iPtuo00wW+IMLeBuKMn3OLn005hcrOGTad\nhcmeyfhQP7Z+iKHvyoQGi1C0ClymHETx/chhQGDyYSWqB/THwnN15AwLQo0E5V9E\nSJlbe4mBlqeInUsNYugExNf+tOiybcrswBy8OFsd34XOW3rjSUtsuafd9AWySa3h\nxRRrwszrzX/WWGm6wyB+f7C4\n-----END CERTIFICATE-----\n",
+                "is_ca": true,
+                "issuer": "CN=Amazon Root CA 1,O=Amazon,C=US",
+                "max_path_length": 0,
+                "not_after": "2030-08-23T22:21:28Z",
+                "not_before": "2022-08-23T22:21:28Z",
+                "public_key_algorithm": "RSA",
+                "serial_number": "166129328851546858514271303855646110030630415",
+                "sha1_fingerprint": "2ad974a775f73cbdbbd8f5ac3a49255fa8fb1f8c",
+                "signature_algorithm": "SHA256-RSA",
+                "subject": "CN=Amazon RSA 2048 M01,O=Amazon,C=US",
+                "version": 3
+              },
+              {
+                "cert_pem": "-----BEGIN CERTIFICATE-----\nMIIF3DCCBMSgAwIBAgIQDWSUrLO5Y9qkm2y4CpQ/CTANBgkqhkiG9w0BAQsFADA8\nMQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRwwGgYDVQQDExNBbWF6b24g\nUlNBIDIwNDggTTAxMB4XDTI2MDEyNzAwMDAwMFoXDTI3MDIyNTIzNTk1OVowKDEm\nMCQGA1UEAwwdKi5la3MudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20wggEiMA0GCSqG\nSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDjfWC3ScmP3Yt3ENQgpvZzbXg3ZqdR+F5k\n/SIXqF2RRdrDIu3B0CivVPkNbZxS4dUjum7WHRV3+cjhne679pLBzKp/aCqycyVr\nqiGvPsCOywSNgCQ7KGZ7fR9L0o4eQ5vsotNTjF1HDkoVGdjDt8qjFedVngnnLZ2f\n9E/tACJHoCXLbg1BLI/0xXQKZqLiLGUgcLhnZjYn6AW8QgXgGyJMwHo6n13wf8uY\n3RAaOWMsTglOfMrPMKclQBwh4OaWzHD3SLXnjAvdtuErZGWSz01pRY89FfxZWtSf\nxGG+ERvHMAoM2lIbV74Bs0B+qVVAxP658rpMbPevtRrlj+fYkFzvAgMBAAGjggLs\nMIIC6DAfBgNVHSMEGDAWgBSBuA5jiokSGOX6OztQlZ/m5ZAThTAdBgNVHQ4EFgQU\npzXKZp4CIP0/n8bNGf3YAZVaFtIwKAYDVR0RBCEwH4IdKi5la3MudXMtZWFzdC0x\nLmFtYXpvbmF3cy5jb20wEwYDVR0gBAwwCjAIBgZngQwBAgEwDgYDVR0PAQH/BAQD\nAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDsGA1UdHwQ0MDIwMKAuoCyGKmh0dHA6\nLy9jcmwucjJtMDEuYW1hem9udHJ1c3QuY29tL3IybTAxLmNybDB1BggrBgEFBQcB\nAQRpMGcwLQYIKwYBBQUHMAGGIWh0dHA6Ly9vY3NwLnIybTAxLmFtYXpvbnRydXN0\nLmNvbTA2BggrBgEFBQcwAoYqaHR0cDovL2NydC5yMm0wMS5hbWF6b250cnVzdC5j\nb20vcjJtMDEuY2VyMAwGA1UdEwEB/wQCMAAwggF+BgorBgEEAdZ5AgQCBIIBbgSC\nAWoBaAB1AExj3JjlnB2riPYeij3ero+rRKM3e1+blMP7oZz8wb4mAAABm/3p2vcA\nAAQDAEYwRAIgOCwhiOx8FXqVNu1L+Mv2q8pJCKzIqLFwCE6VAugMkb0CIBu7W9o8\nRWfC1A9XjVWFxJ0uIquBPcEycQMNc8pRKAJFAHcAHJ9oLOn68EVpUPgbloqH3dsy\nENhM5siy44JSSsTPWZ8AAAGb/ena3wAABAMASDBGAiEAjAu69L5N17FqPfmXSt1v\ngM+df4yz50M/fb2LDfmx+xECIQC3B3aoHVNsjqYMmqwQgR4ViKIREwNzCYKBm+W0\nGnlwnwB2AGBMmq96f3dfAdQG/JINyJnrCxx9+MlSG/r6F3c7l4vJAAABm/3p28gA\nAAQDAEcwRQIgMiBVCk6C4EylG885QJIv8X2wpplMtdWJxyt3JVQ56NUCIQC6uZDM\nw0VrwTXkW4eLg73D5Z89Z8tadQwizoXyjBAaYjANBgkqhkiG9w0BAQsFAAOCAQEA\nHMEZInJfTjgc0JTF+C7ZR/8rk1c511SMI9RcmNjnrkoP3pBPQTSEU92bGaCYvOYO\nRMB1bAOk/Ql9kDBSRDcKiOz8wPWZBgyJZRMSVyO5WbLM//8jsP83vmvFNbSo7Tuk\n5R6KAtzOMOymwITZeM6k4saoyB847rmlPDIkD/RRM0Col+Ik8+V3HSdHsnrA/3Ep\n1ICdUJvE0M9oEnbO2DWrCz6yOuz0AcfcmMGTBLqlsFdoJpcXj7c1QcCJaK1B7qaQ\nuQXdywqElVO6BrBxHQROLxjLHXMNblOzvrXYWGkhiQ+0cYYCMBtbhpphhebxnUBV\nuCxvp9/yY1GmsG6lwzLYEw==\n-----END CERTIFICATE-----\n",
+                "is_ca": false,
+                "issuer": "CN=Amazon RSA 2048 M01,O=Amazon,C=US",
+                "max_path_length": -1,
+                "not_after": "2027-02-25T23:59:59Z",
+                "not_before": "2026-01-27T00:00:00Z",
+                "public_key_algorithm": "RSA",
+                "serial_number": "17802209110544621593474031143248740105",
+                "sha1_fingerprint": "37647fee5fc063960139521aa2400c75db27825b",
+                "signature_algorithm": "SHA256-RSA",
+                "subject": "CN=*.eks.us-east-1.amazonaws.com",
+                "version": 3
+              }
+            ],
+            "content": null,
+            "id": "b1b539daa206035ae3c3e28288b0681fa1b462f3",
+            "url": "https://oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20",
+            "verify_chain": true
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_eks_cluster",
+      "name": "bedrock_cluster",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "access_config": [
+              {
+                "authentication_mode": "API_AND_CONFIG_MAP",
+                "bootstrap_cluster_creator_admin_permissions": false
+              }
+            ],
+            "arn": "arn:aws:eks:us-east-1:958850199225:cluster/project-bedrock-cluster",
+            "bootstrap_self_managed_addons": true,
+            "certificate_authority": [
+              {
+                "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJVmQ5R1A1eWZBTkl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBMk1ETXhNekF5TURKYUZ3MHpOakExTXpFeE16QTNNREphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUNyL0l0NDN4UUVlbTBLNE5HeXZmejZ4YUJiSmFvN2dVeU02Z2NZQXJxa2h1Q0JBK2x5RFZoaUxhS2MKWmx6bVFmTW1mVnRXdDBSeVNjTGJnaUgyM1VTMUlvYWJHTGY1TUFKS1pCK3pZZFFaOWg4czIreDdqcTJ6dXlWVQpYZTE2R0srbmh2SHlBckpFL3hGSnl6dkZBdFQrWXN2V0RaSy9Nak0vUm1qcVdQNzZTNUFhLzdsQmV6NUFncGtUCmFoVjVKVXkxdWl2OThPSFltdU5CTlNxVWpSaUJmOTBuNkxSNUFhbWc0cUwrL0NvWTdrbVZHUVVVR3d1RVJNeUoKdGVVa2tmS3BKVU1CTEZLelRiVkUzRnpaZGRlTXFENE9kKzVsNUpSSVUyV2VqbzdpNXh0cFBHK0c3bXZneTZsNQpISzJSZGt0cm1ONnpHSlg3ZlF4eHVSRUJMTEtIQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJRampFNkF1NEtkUjVpNEpRdXRuVkZDME9tL0lEQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQStmZVJ5TmdlTgpld2dEVGJId3FpSU8ydDJwMGMrRzNFOCs0eUVFa1VwbVJqV1kyVXljR2F3ZGZKZHpyMVBSbjh2Wno0RDVrd1hsCnp3cnJwTlA5bGhhaVFyRG11OWxOaG80OHlwVGVTQ2RLQllXQjhWM2NLSWJFSVFJU1d0ZTloaDNSUE92bUVsMWUKamhmdm1ZMkp5cmFSTjJUbkJ1WjZwbnRCWGxUOHZSZXVhRXM5MnM5OFJPanppVFg5OS9hcnlQZ3dnWXBHMG43bwpzdUhiUWpoNitrM05XdWFJWDB1ZlhPNThVWjZ4ZHR5RERBQ3BSOEFHRys5WVkxYzZBdHBzdFdET2ppR3BiY0VlCjhzOTlZWUlKbkNmVGdkYXhsTFhtV3RBbnBKbEt4MEdUdUU1V21UMEZVZ3RhaFhHKy9zM0gvY3FZSzlzeHEvSG0Kb1pNcjRobTFLRHgwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+              }
+            ],
+            "cluster_id": null,
+            "compute_config": [],
+            "created_at": "2026-06-03T13:01:48Z",
+            "enabled_cluster_log_types": [
+              "api",
+              "audit",
+              "authenticator",
+              "controllerManager",
+              "scheduler"
+            ],
+            "encryption_config": [],
+            "endpoint": "https://94A91E98EDE69D3904DF2BEA77626B20.gr7.us-east-1.eks.amazonaws.com",
+            "force_update_version": null,
+            "id": "project-bedrock-cluster",
+            "identity": [
+              {
+                "oidc": [
+                  {
+                    "issuer": "https://oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20"
+                  }
+                ]
+              }
+            ],
+            "kubernetes_network_config": [
+              {
+                "elastic_load_balancing": [
+                  {
+                    "enabled": false
+                  }
+                ],
+                "ip_family": "ipv4",
+                "service_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv6_cidr": ""
+              }
+            ],
+            "name": "project-bedrock-cluster",
+            "outpost_config": [],
+            "platform_version": "eks.23",
+            "remote_network_config": [],
+            "role_arn": "arn:aws:iam::958850199225:role/project-bedrock-cluster-role",
+            "status": "ACTIVE",
+            "storage_config": [],
+            "tags": {
+              "Name": "project-bedrock-cluster",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-cluster",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "upgrade_policy": [
+              {
+                "support_type": "EXTENDED"
+              }
+            ],
+            "version": "1.34",
+            "vpc_config": [
+              {
+                "cluster_security_group_id": "sg-022c330dbf5964618",
+                "endpoint_private_access": true,
+                "endpoint_public_access": true,
+                "public_access_cidrs": [
+                  "0.0.0.0/0"
+                ],
+                "security_group_ids": [],
+                "subnet_ids": [
+                  "subnet-0915b506991a4f829",
+                  "subnet-0fdce5a437b8e96f1"
+                ],
+                "vpc_id": "vpc-03044dba47846e496"
+              }
+            ],
+            "zonal_shift_config": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_eks_node_group",
+      "name": "bedrock_nodes",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "ami_type": "AL2023_x86_64_STANDARD",
+            "arn": "arn:aws:eks:us-east-1:958850199225:nodegroup/project-bedrock-cluster/project-bedrock-node-group/fecf4713-850b-7484-1771-013acd283008",
+            "capacity_type": "ON_DEMAND",
+            "cluster_name": "project-bedrock-cluster",
+            "disk_size": 20,
+            "force_update_version": null,
+            "id": "project-bedrock-cluster:project-bedrock-node-group",
+            "instance_types": [
+              "t3.small"
+            ],
+            "labels": {},
+            "launch_template": [],
+            "node_group_name": "project-bedrock-node-group",
+            "node_group_name_prefix": "",
+            "node_repair_config": [],
+            "node_role_arn": "arn:aws:iam::958850199225:role/project-bedrock-node-role",
+            "release_version": "1.34.8-20260527",
+            "remote_access": [],
+            "resources": [
+              {
+                "autoscaling_groups": [
+                  {
+                    "name": "eks-project-bedrock-node-group-fecf4713-850b-7484-1771-013acd283008"
+                  }
+                ],
+                "remote_access_security_group_id": ""
+              }
+            ],
+            "scaling_config": [
+              {
+                "desired_size": 3,
+                "max_size": 4,
+                "min_size": 2
+              }
+            ],
+            "status": "ACTIVE",
+            "subnet_ids": [
+              "subnet-0915b506991a4f829",
+              "subnet-0fdce5a437b8e96f1"
+            ],
+            "tags": {
+              "Name": "project-bedrock-nodes",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-nodes",
+              "Project": "karatu-2025-capstone"
+            },
+            "taint": [],
+            "timeouts": null,
+            "update_config": [
+              {
+                "max_unavailable": 1,
+                "max_unavailable_percentage": 0
+              }
+            ],
+            "version": "1.34"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role.eks_node_role",
+            "module.compute.aws_iam_role_policy_attachment.ec2_registry_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_cni_policy",
+            "module.compute.aws_iam_role_policy_attachment.eks_worker_node_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_openid_connect_provider",
+      "name": "oidc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20",
+            "client_id_list": [
+              "sts.amazonaws.com"
+            ],
+            "id": "arn:aws:iam::958850199225:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20",
+            "tags": {},
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "thumbprint_list": [
+              "06b25927c42a721631c1efd9431e648fa62e1e39"
+            ],
+            "url": "oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.compute.data.tls_certificate.cluster",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "eks_cluster_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:role/project-bedrock-cluster-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T13:01:18Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "project-bedrock-cluster-role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+            ],
+            "max_session_duration": 3600,
+            "name": "project-bedrock-cluster-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Name": "project-bedrock-cluster-role",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-cluster-role",
+              "Project": "karatu-2025-capstone"
+            },
+            "unique_id": "AROA56P7M524XZRDG2HG4"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "eks_node_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:role/project-bedrock-node-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T13:01:18Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "project-bedrock-node-role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+              "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+              "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+            ],
+            "max_session_duration": 3600,
+            "name": "project-bedrock-node-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {
+              "Name": "project-bedrock-node-role",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-node-role",
+              "Project": "karatu-2025-capstone"
+            },
+            "unique_id": "AROA56P7M524RLDJOWVHS"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "ec2_registry_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-node-role-20260603130121713900000005",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "role": "project-bedrock-node-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_iam_role.eks_node_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "eks_cluster_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-cluster-role-20260603130122370600000007",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+            "role": "project-bedrock-cluster-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_iam_role.eks_cluster_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "eks_cni_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-node-role-20260603130122521900000008",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+            "role": "project-bedrock-node-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_iam_role.eks_node_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.compute",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "eks_worker_node_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-node-role-20260603130121934300000006",
+            "policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "role": "project-bedrock-node-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_iam_role.eks_node_role"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.monitoring",
+      "mode": "managed",
+      "type": "aws_iam_policy",
+      "name": "alb_ingress_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:policy/AWSLoadBalancerControllerIAMPolicy",
+            "attachment_count": 1,
+            "description": "Permissions required by the AWS Load Balancer Controller",
+            "id": "arn:aws:iam::958850199225:policy/AWSLoadBalancerControllerIAMPolicy",
+            "name": "AWSLoadBalancerControllerIAMPolicy",
+            "name_prefix": "",
+            "path": "/",
+            "policy": "{\"Statement\":[{\"Action\":[\"iam:CreateServiceLinkedRole\",\"ec2:DescribeAccountAttributes\",\"ec2:DescribeAddresses\",\"ec2:DescribeAvailabilityZones\",\"ec2:DescribeInternetGateways\",\"ec2:DescribeVpcs\",\"ec2:DescribeSubnets\",\"ec2:DescribeSecurityGroups\",\"ec2:DescribeInstances\",\"ec2:DescribeNetworkInterfaces\",\"ec2:DescribeTags\",\"ec2:GetCoipPoolUsage\",\"ec2:ListPoolAssociations\",\"elasticloadbalancing:DescribeLoadBalancers\",\"elasticloadbalancing:DescribeLoadBalancerAttributes\",\"elasticloadbalancing:DescribeListeners\",\"elasticloadbalancing:DescribeListenerCertificates\",\"elasticloadbalancing:DescribeSSLPolicies\",\"elasticloadbalancing:DescribeRules\",\"elasticloadbalancing:DescribeTargetGroups\",\"elasticloadbalancing:DescribeTargetGroupAttributes\",\"elasticloadbalancing:DescribeTargetHealth\",\"elasticloadbalancing:DescribeTags\",\"elasticloadbalancing:DescribeTrustStores\",\"cognito-idp:DescribeUserPoolClient\",\"acm:ListCertificates\",\"acm:DescribeCertificate\",\"iam:ListServerCertificates\",\"iam:GetServerCertificate\",\"waf-regional:GetWebACLForResource\",\"waf-regional:GetWebACL\",\"waf-regional:AssociateWebACL\",\"waf-regional:DisassociateWebACL\",\"wafv2:GetWebACL\",\"wafv2:GetWebACLForResource\",\"wafv2:AssociateWebACL\",\"wafv2:DisassociateWebACL\",\"shield:DescribeProtection\",\"shield:GetSubscriptionState\",\"shield:DeleteProtection\",\"shield:CreateProtection\",\"shield:DescribeSubscription\",\"ec2:AuthorizeSecurityGroupIngress\",\"ec2:RevokeSecurityGroupIngress\",\"ec2:CreateSecurityGroup\",\"ec2:DeleteSecurityGroup\",\"ec2:CreateTags\",\"ec2:DeleteTags\",\"elasticloadbalancing:CreateLoadBalancer\",\"elasticloadbalancing:CreateTargetGroup\",\"elasticloadbalancing:CreateListener\",\"elasticloadbalancing:CreateRule\",\"elasticloadbalancing:DeleteLoadBalancer\",\"elasticloadbalancing:DeleteTargetGroup\",\"elasticloadbalancing:DeleteListener\",\"elasticloadbalancing:DeleteRule\",\"elasticloadbalancing:AddTags\",\"elasticloadbalancing:RemoveTags\",\"elasticloadbalancing:ModifyLoadBalancerAttributes\",\"elasticloadbalancing:ModifyTargetGroup\",\"elasticloadbalancing:ModifyTargetGroupAttributes\",\"elasticloadbalancing:ModifyListener\",\"elasticloadbalancing:RegisterTargets\",\"elasticloadbalancing:DeregisterTargets\",\"elasticloadbalancing:SetWebAcl\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+            "policy_id": "ANPA56P7M524UMGFCDZSJ",
+            "tags": {},
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.monitoring",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "alb_controller_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::958850199225:role/project-bedrock-alb-controller-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRoleWithWebIdentity\",\"Condition\":{\"StringEquals\":{\"oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20:sub\":\"system:serviceaccount:kube-system:aws-load-balancer-controller\"}},\"Effect\":\"Allow\",\"Principal\":{\"Federated\":\"arn:aws:iam::958850199225:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/94A91E98EDE69D3904DF2BEA77626B20\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T13:11:45Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "project-bedrock-alb-controller-role",
+            "inline_policy": [],
+            "managed_policy_arns": [
+              "arn:aws:iam::958850199225:policy/AWSLoadBalancerControllerIAMPolicy"
+            ],
+            "max_session_duration": 3600,
+            "name": "project-bedrock-alb-controller-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {},
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            },
+            "unique_id": "AROA56P7M5246D4FXLXVY"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_openid_connect_provider.oidc",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.compute.data.tls_certificate.cluster",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.monitoring",
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "alb_controller_attach",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "project-bedrock-alb-controller-role-20260603214533854900000001",
+            "policy_arn": "arn:aws:iam::958850199225:policy/AWSLoadBalancerControllerIAMPolicy",
+            "role": "project-bedrock-alb-controller-role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_openid_connect_provider.oidc",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.compute.data.tls_certificate.cluster",
+            "module.monitoring.aws_iam_policy.alb_ingress_policy",
+            "module.monitoring.aws_iam_role.alb_controller_role",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_db_subnet_group",
+      "name": "rds_subnet_group",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:rds:us-east-1:958850199225:subgrp:project-bedrock-rds-subnet-group",
+            "description": "Managed by Terraform",
+            "id": "project-bedrock-rds-subnet-group",
+            "name": "project-bedrock-rds-subnet-group",
+            "name_prefix": "",
+            "subnet_ids": [
+              "subnet-0215bcc648f92dd0d",
+              "subnet-0794dd9d68449b21e"
+            ],
+            "supported_network_types": [
+              "IPV4"
+            ],
+            "tags": {
+              "Name": "project-bedrock-rds-subnet-group",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-rds-subnet-group",
+              "Project": "karatu-2025-capstone"
+            },
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.networking.aws_subnet.database",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_eip",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-0f1fafd115014380f",
+            "arn": "arn:aws:ec2:us-east-1:958850199225:elastic-ip/eipalloc-0f1fafd115014380f",
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-0852ae4e1f1171c33",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-0f1fafd115014380f",
+            "instance": "",
+            "ipam_pool_id": null,
+            "network_border_group": "us-east-1",
+            "network_interface": "eni-015fce66936bb646b",
+            "private_dns": "ip-10-0-8-18.ec2.internal",
+            "private_ip": "10.0.8.18",
+            "ptr_record": "",
+            "public_dns": "ec2-23-23-225-99.compute-1.amazonaws.com",
+            "public_ip": "23.23.225.99",
+            "public_ipv4_pool": "amazon",
+            "tags": {
+              "Name": "project-bedrock-nat-eip-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-nat-eip-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-0d669ab7662c549fb",
+            "arn": "arn:aws:ec2:us-east-1:958850199225:elastic-ip/eipalloc-0d669ab7662c549fb",
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-0c91b456e0c038765",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-0d669ab7662c549fb",
+            "instance": "",
+            "ipam_pool_id": null,
+            "network_border_group": "us-east-1",
+            "network_interface": "eni-0d231f5775dcf5564",
+            "private_dns": "ip-10-0-26-48.ec2.internal",
+            "private_ip": "10.0.26.48",
+            "ptr_record": "",
+            "public_dns": "ec2-34-197-170-68.compute-1.amazonaws.com",
+            "public_ip": "34.197.170.68",
+            "public_ipv4_pool": "amazon",
+            "tags": {
+              "Name": "project-bedrock-nat-eip-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-nat-eip-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "igw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:internet-gateway/igw-091d1f396a6a7417d",
+            "id": "igw-091d1f396a6a7417d",
+            "owner_id": "958850199225",
+            "tags": {
+              "Name": "project-bedrock-igw",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-igw",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_nat_gateway",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": "eipalloc-0f1fafd115014380f",
+            "association_id": "eipassoc-0852ae4e1f1171c33",
+            "connectivity_type": "public",
+            "id": "nat-0e32f3a78d9faa6e3",
+            "network_interface_id": "eni-015fce66936bb646b",
+            "private_ip": "10.0.8.18",
+            "public_ip": "23.23.225.99",
+            "secondary_allocation_ids": [],
+            "secondary_private_ip_address_count": 0,
+            "secondary_private_ip_addresses": [],
+            "subnet_id": "subnet-06c09ac2236987fa2",
+            "tags": {
+              "Name": "project-bedrock-nat-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-nat-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": "eipalloc-0d669ab7662c549fb",
+            "association_id": "eipassoc-0c91b456e0c038765",
+            "connectivity_type": "public",
+            "id": "nat-005efa1bfe43a0d4d",
+            "network_interface_id": "eni-0d231f5775dcf5564",
+            "private_ip": "10.0.26.48",
+            "public_ip": "34.197.170.68",
+            "secondary_allocation_ids": [],
+            "secondary_private_ip_address_count": 0,
+            "secondary_private_ip_addresses": [],
+            "subnet_id": "subnet-092ce42798a74ea1e",
+            "tags": {
+              "Name": "project-bedrock-nat-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-nat-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "private",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:route-table/rtb-07f97645b029bf445",
+            "id": "rtb-07f97645b029bf445",
+            "owner_id": "958850199225",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-0e32f3a78d9faa6e3",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "project-bedrock-private-rt-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-private-rt-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_nat_gateway.nat",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:route-table/rtb-050d313762db16aa5",
+            "id": "rtb-050d313762db16aa5",
+            "owner_id": "958850199225",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "nat-005efa1bfe43a0d4d",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "project-bedrock-private-rt-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-private-rt-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_nat_gateway.nat",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:route-table/rtb-00638c918b48a99c2",
+            "id": "rtb-00638c918b48a99c2",
+            "owner_id": "958850199225",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-091d1f396a6a7417d",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {
+              "Name": "project-bedrock-public-rt",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-public-rt",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_internet_gateway.igw",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "private",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0f495858fb0d60927",
+            "route_table_id": "rtb-07f97645b029bf445",
+            "subnet_id": "subnet-0915b506991a4f829",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_nat_gateway.nat",
+            "module.networking.aws_route_table.private",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0731f8520cde4636c",
+            "route_table_id": "rtb-050d313762db16aa5",
+            "subnet_id": "subnet-0fdce5a437b8e96f1",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_eip.nat",
+            "module.networking.aws_nat_gateway.nat",
+            "module.networking.aws_route_table.private",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-07c83ce817c5f0d72",
+            "route_table_id": "rtb-00638c918b48a99c2",
+            "subnet_id": "subnet-06c09ac2236987fa2",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_internet_gateway.igw",
+            "module.networking.aws_route_table.public",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-08fddbdca424a5058",
+            "route_table_id": "rtb-00638c918b48a99c2",
+            "subnet_id": "subnet-092ce42798a74ea1e",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.networking.aws_internet_gateway.igw",
+            "module.networking.aws_route_table.public",
+            "module.networking.aws_subnet.public",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "database",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-0215bcc648f92dd0d",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "use1-az1",
+            "cidr_block": "10.0.128.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0215bcc648f92dd0d",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-db-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-db-us-east-1a",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-0794dd9d68449b21e",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "use1-az2",
+            "cidr_block": "10.0.144.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0794dd9d68449b21e",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-db-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-db-us-east-1b",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "private",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-0915b506991a4f829",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "use1-az1",
+            "cidr_block": "10.0.64.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0915b506991a4f829",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-private-us-east-1a",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/internal-elb": "1"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-private-us-east-1a",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/internal-elb": "1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-0fdce5a437b8e96f1",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "use1-az2",
+            "cidr_block": "10.0.80.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0fdce5a437b8e96f1",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-private-us-east-1b",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/internal-elb": "1"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-private-us-east-1b",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/internal-elb": "1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-06c09ac2236987fa2",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1a",
+            "availability_zone_id": "use1-az1",
+            "cidr_block": "10.0.0.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-06c09ac2236987fa2",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": true,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-public-us-east-1a",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/elb": "1"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-public-us-east-1a",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/elb": "1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        },
+        {
+          "index_key": 1,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:subnet/subnet-092ce42798a74ea1e",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-east-1b",
+            "availability_zone_id": "use1-az2",
+            "cidr_block": "10.0.16.0/20",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-092ce42798a74ea1e",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": true,
+            "outpost_arn": "",
+            "owner_id": "958850199225",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "project-bedrock-public-us-east-1b",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/elb": "1"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-public-us-east-1b",
+              "Project": "karatu-2025-capstone",
+              "kubernetes.io/cluster/project-bedrock-cluster": "shared",
+              "kubernetes.io/role/elb": "1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.networking",
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "bedrock_vpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:vpc/vpc-03044dba47846e496",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-0b6dc3d4de38a4b1e",
+            "default_route_table_id": "rtb-00cf757aece98e8d6",
+            "default_security_group_id": "sg-08754df2a92798df1",
+            "dhcp_options_id": "dopt-05d50f72f54bd50e1",
+            "enable_dns_hostnames": true,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-03044dba47846e496",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-00cf757aece98e8d6",
+            "owner_id": "958850199225",
+            "tags": {
+              "Name": "project-bedrock-vpc",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-vpc",
+              "Project": "karatu-2025-capstone"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "mysql",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "address": "project-bedrock-mysql.cmziyee2slb1.us-east-1.rds.amazonaws.com",
+            "allocated_storage": 20,
+            "allow_major_version_upgrade": null,
+            "apply_immediately": false,
+            "arn": "arn:aws:rds:us-east-1:958850199225:db:project-bedrock-mysql",
+            "auto_minor_version_upgrade": true,
+            "availability_zone": "us-east-1b",
+            "backup_retention_period": 0,
+            "backup_target": "region",
+            "backup_window": "10:13-10:43",
+            "blue_green_update": [],
+            "ca_cert_identifier": "rds-ca-rsa2048-g1",
+            "character_set_name": "",
+            "copy_tags_to_snapshot": false,
+            "custom_iam_instance_profile": "",
+            "customer_owned_ip_enabled": false,
+            "database_insights_mode": "standard",
+            "db_name": "catalog",
+            "db_subnet_group_name": "project-bedrock-rds-subnet-group",
+            "dedicated_log_volume": false,
+            "delete_automated_backups": true,
+            "deletion_protection": false,
+            "domain": "",
+            "domain_auth_secret_arn": "",
+            "domain_dns_ips": [],
+            "domain_fqdn": "",
+            "domain_iam_role_name": "",
+            "domain_ou": "",
+            "enabled_cloudwatch_logs_exports": [],
+            "endpoint": "project-bedrock-mysql.cmziyee2slb1.us-east-1.rds.amazonaws.com:3306",
+            "engine": "mysql",
+            "engine_lifecycle_support": "open-source-rds-extended-support",
+            "engine_version": "8.0",
+            "engine_version_actual": "8.0.45",
+            "final_snapshot_identifier": null,
+            "hosted_zone_id": "Z2R2ITUGPM61AM",
+            "iam_database_authentication_enabled": false,
+            "id": "db-VVKHYKKD43Z2GT4SWZIKF3JVWI",
+            "identifier": "project-bedrock-mysql",
+            "identifier_prefix": "",
+            "instance_class": "db.t4g.micro",
+            "iops": 0,
+            "kms_key_id": "",
+            "latest_restorable_time": "",
+            "license_model": "general-public-license",
+            "listener_endpoint": [],
+            "maintenance_window": "fri:05:38-fri:06:08",
+            "manage_master_user_password": null,
+            "master_user_secret": [],
+            "master_user_secret_kms_key_id": null,
+            "max_allocated_storage": 50,
+            "monitoring_interval": 0,
+            "monitoring_role_arn": "",
+            "multi_az": false,
+            "nchar_character_set_name": "",
+            "network_type": "IPV4",
+            "option_group_name": "default:mysql-8-0",
+            "parameter_group_name": "default.mysql8.0",
+            "password": "PAkr0LRDEYPKigOZ",
+            "password_wo": null,
+            "password_wo_version": null,
+            "performance_insights_enabled": false,
+            "performance_insights_kms_key_id": "",
+            "performance_insights_retention_period": 0,
+            "port": 3306,
+            "publicly_accessible": false,
+            "replica_mode": "",
+            "replicas": [],
+            "replicate_source_db": "",
+            "resource_id": "db-VVKHYKKD43Z2GT4SWZIKF3JVWI",
+            "restore_to_point_in_time": [],
+            "s3_import": [],
+            "skip_final_snapshot": true,
+            "snapshot_identifier": null,
+            "status": "available",
+            "storage_encrypted": false,
+            "storage_throughput": 0,
+            "storage_type": "gp2",
+            "tags": {
+              "Name": "project-bedrock-mysql",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-mysql",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "timezone": "",
+            "upgrade_storage_config": null,
+            "username": "catalog_admin",
+            "vpc_security_group_ids": [
+              "sg-0ef33974408687199"
+            ]
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "password"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NDgwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_db_subnet_group.rds_subnet_group",
+            "module.networking.aws_subnet.database",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc",
+            "module.storage.aws_security_group.mysql_sg",
+            "module.storage.random_password.db_password"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "postgres",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "address": "project-bedrock-postgres.cmziyee2slb1.us-east-1.rds.amazonaws.com",
+            "allocated_storage": 20,
+            "allow_major_version_upgrade": null,
+            "apply_immediately": false,
+            "arn": "arn:aws:rds:us-east-1:958850199225:db:project-bedrock-postgres",
+            "auto_minor_version_upgrade": true,
+            "availability_zone": "us-east-1b",
+            "backup_retention_period": 0,
+            "backup_target": "region",
+            "backup_window": "09:50-10:20",
+            "blue_green_update": [],
+            "ca_cert_identifier": "rds-ca-rsa2048-g1",
+            "character_set_name": "",
+            "copy_tags_to_snapshot": false,
+            "custom_iam_instance_profile": "",
+            "customer_owned_ip_enabled": false,
+            "database_insights_mode": "standard",
+            "db_name": "orders",
+            "db_subnet_group_name": "project-bedrock-rds-subnet-group",
+            "dedicated_log_volume": false,
+            "delete_automated_backups": true,
+            "deletion_protection": false,
+            "domain": "",
+            "domain_auth_secret_arn": "",
+            "domain_dns_ips": [],
+            "domain_fqdn": "",
+            "domain_iam_role_name": "",
+            "domain_ou": "",
+            "enabled_cloudwatch_logs_exports": [],
+            "endpoint": "project-bedrock-postgres.cmziyee2slb1.us-east-1.rds.amazonaws.com:5432",
+            "engine": "postgres",
+            "engine_lifecycle_support": "open-source-rds-extended-support",
+            "engine_version": "15",
+            "engine_version_actual": "15.17",
+            "final_snapshot_identifier": null,
+            "hosted_zone_id": "Z2R2ITUGPM61AM",
+            "iam_database_authentication_enabled": false,
+            "id": "db-ASEMKQOZ237FY2I67D4TNVETKY",
+            "identifier": "project-bedrock-postgres",
+            "identifier_prefix": "",
+            "instance_class": "db.t4g.micro",
+            "iops": 0,
+            "kms_key_id": "",
+            "latest_restorable_time": "",
+            "license_model": "postgresql-license",
+            "listener_endpoint": [],
+            "maintenance_window": "tue:06:50-tue:07:20",
+            "manage_master_user_password": null,
+            "master_user_secret": [],
+            "master_user_secret_kms_key_id": null,
+            "max_allocated_storage": 50,
+            "monitoring_interval": 0,
+            "monitoring_role_arn": "",
+            "multi_az": false,
+            "nchar_character_set_name": "",
+            "network_type": "IPV4",
+            "option_group_name": "default:postgres-15",
+            "parameter_group_name": "default.postgres15",
+            "password": "PAkr0LRDEYPKigOZ",
+            "password_wo": null,
+            "password_wo_version": null,
+            "performance_insights_enabled": false,
+            "performance_insights_kms_key_id": "",
+            "performance_insights_retention_period": 0,
+            "port": 5432,
+            "publicly_accessible": false,
+            "replica_mode": "",
+            "replicas": [],
+            "replicate_source_db": "",
+            "resource_id": "db-ASEMKQOZ237FY2I67D4TNVETKY",
+            "restore_to_point_in_time": [],
+            "s3_import": [],
+            "skip_final_snapshot": true,
+            "snapshot_identifier": null,
+            "status": "available",
+            "storage_encrypted": false,
+            "storage_throughput": 0,
+            "storage_type": "gp2",
+            "tags": {
+              "Name": "project-bedrock-postgres",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-postgres",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "timezone": "",
+            "upgrade_storage_config": null,
+            "username": "orders_admin",
+            "vpc_security_group_ids": [
+              "sg-0e933971d78c236a8"
+            ]
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "password"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6NDgwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_db_subnet_group.rds_subnet_group",
+            "module.networking.aws_subnet.database",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc",
+            "module.storage.aws_security_group.postgres_sg",
+            "module.storage.random_password.db_password"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_dynamodb_table",
+      "name": "carts_table",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:dynamodb:us-east-1:958850199225:table/project-bedrock-carts",
+            "attribute": [
+              {
+                "name": "id",
+                "type": "S"
+              }
+            ],
+            "billing_mode": "PAY_PER_REQUEST",
+            "deletion_protection_enabled": false,
+            "global_secondary_index": [],
+            "hash_key": "id",
+            "id": "project-bedrock-carts",
+            "import_table": [],
+            "local_secondary_index": [],
+            "name": "project-bedrock-carts",
+            "on_demand_throughput": [],
+            "point_in_time_recovery": [
+              {
+                "enabled": false,
+                "recovery_period_in_days": 0
+              }
+            ],
+            "range_key": null,
+            "read_capacity": 0,
+            "replica": [],
+            "restore_date_time": null,
+            "restore_source_name": null,
+            "restore_source_table_arn": null,
+            "restore_to_latest_time": null,
+            "server_side_encryption": [],
+            "stream_arn": "",
+            "stream_enabled": false,
+            "stream_label": "",
+            "stream_view_type": "",
+            "table_class": "STANDARD",
+            "tags": {
+              "Name": "project-bedrock-carts",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-carts",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "ttl": [
+              {
+                "attribute_name": "",
+                "enabled": false
+              }
+            ],
+            "write_capacity": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "assets",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::bedrock-assets-jaeybee98",
+            "bucket": "bedrock-assets-jaeybee98",
+            "bucket_domain_name": "bedrock-assets-jaeybee98.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "bedrock-assets-jaeybee98.s3.us-east-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": true,
+            "grant": [
+              {
+                "id": "1087214f19fb031b740e8b72818d2d7bf9e438c176e9e62335fa00ba4807d235",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z3AQBSTGFYJSTF",
+            "id": "bedrock-assets-jaeybee98",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "us-east-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "Name": "bedrock-assets-jaeybee98",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "bedrock-assets-jaeybee98",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "assets_privacy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_public_acls": true,
+            "block_public_policy": true,
+            "bucket": "bedrock-assets-jaeybee98",
+            "id": "bedrock-assets-jaeybee98",
+            "ignore_public_acls": true,
+            "restrict_public_buckets": true
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.storage.aws_s3_bucket.assets"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_secretsmanager_secret",
+      "name": "db_secret",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:secretsmanager:us-east-1:958850199225:secret:project-bedrock-db-credentials-lVV5ib",
+            "description": "",
+            "force_overwrite_replica_secret": false,
+            "id": "arn:aws:secretsmanager:us-east-1:958850199225:secret:project-bedrock-db-credentials-lVV5ib",
+            "kms_key_id": "",
+            "name": "project-bedrock-db-credentials",
+            "name_prefix": "",
+            "policy": "",
+            "recovery_window_in_days": 0,
+            "replica": [],
+            "tags": {
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Project": "karatu-2025-capstone"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_secretsmanager_secret_version",
+      "name": "db_secret_val",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:secretsmanager:us-east-1:958850199225:secret:project-bedrock-db-credentials-lVV5ib",
+            "has_secret_string_wo": null,
+            "id": "arn:aws:secretsmanager:us-east-1:958850199225:secret:project-bedrock-db-credentials-lVV5ib|terraform-20260603130120863500000002",
+            "secret_binary": "",
+            "secret_id": "arn:aws:secretsmanager:us-east-1:958850199225:secret:project-bedrock-db-credentials-lVV5ib",
+            "secret_string": "{\"mysql_db\":\"catalog\",\"mysql_password\":\"PAkr0LRDEYPKigOZ\",\"mysql_user\":\"catalog_admin\",\"pgsql_db\":\"orders\",\"pgsql_password\":\"PAkr0LRDEYPKigOZ\",\"pgsql_user\":\"orders_admin\"}",
+            "secret_string_wo": null,
+            "secret_string_wo_version": null,
+            "version_id": "terraform-20260603130120863500000002",
+            "version_stages": [
+              "AWSCURRENT"
+            ]
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "secret_string"
+              }
+            ]
+          ],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.storage.aws_secretsmanager_secret.db_secret",
+            "module.storage.random_password.db_password"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "mysql_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:security-group/sg-0ef33974408687199",
+            "description": "Allow inbound MySQL traffic from EKS worker nodes only",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [
+                  "::/0"
+                ],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0ef33974408687199",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "MySQL from EKS Nodes",
+                "from_port": 3306,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-022c330dbf5964618"
+                ],
+                "self": false,
+                "to_port": 3306
+              }
+            ],
+            "name": "project-bedrock-mysql-sg",
+            "name_prefix": "",
+            "owner_id": "958850199225",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "project-bedrock-mysql-sg",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-mysql-sg",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "postgres_sg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-east-1:958850199225:security-group/sg-0e933971d78c236a8",
+            "description": "Allow inbound PostgreSQL traffic from EKS worker nodes only",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [
+                  "::/0"
+                ],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0e933971d78c236a8",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "Postgres from EKS Nodes",
+                "from_port": 5432,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [
+                  "sg-022c330dbf5964618"
+                ],
+                "self": false,
+                "to_port": 5432
+              }
+            ],
+            "name": "project-bedrock-postgres-sg",
+            "name_prefix": "",
+            "owner_id": "958850199225",
+            "revoke_rules_on_delete": false,
+            "tags": {
+              "Name": "project-bedrock-postgres-sg",
+              "Project": "karatu-2025-capstone"
+            },
+            "tags_all": {
+              "Name": "project-bedrock-postgres-sg",
+              "Project": "karatu-2025-capstone"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-03044dba47846e496"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "module.compute.aws_eks_cluster.bedrock_cluster",
+            "module.compute.aws_iam_role.eks_cluster_role",
+            "module.compute.aws_iam_role_policy_attachment.eks_cluster_policy",
+            "module.networking.aws_subnet.private",
+            "module.networking.aws_vpc.bedrock_vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.storage",
+      "mode": "managed",
+      "type": "random_password",
+      "name": "db_password",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 3,
+          "attributes": {
+            "bcrypt_hash": "$2a$10$7hvc4uMJkV5SnP3isSMacecY1EkzhvG.bAafQCZ5eN9Da8b/GBA6.",
+            "id": "none",
+            "keepers": null,
+            "length": 16,
+            "lower": true,
+            "min_lower": 0,
+            "min_numeric": 0,
+            "min_special": 0,
+            "min_upper": 0,
+            "number": true,
+            "numeric": true,
+            "override_special": null,
+            "result": "PAkr0LRDEYPKigOZ",
+            "special": false,
+            "upper": true
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
